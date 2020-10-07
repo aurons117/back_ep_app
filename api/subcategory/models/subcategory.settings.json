@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subcategories",
+  "info": {
+    "name": "subcategory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "subcategory_id": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "products": {
+      "collection": "product",
+      "via": "subcategories",
+      "dominant": true
+    },
+    "category": {
+      "model": "category",
+      "via": "subcategories"
+    },
+    "subcategory_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}

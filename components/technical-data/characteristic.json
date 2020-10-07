@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_technical_data_characteristics",
+  "info": {
+    "name": "characteristic",
+    "icon": "wrench"
+  },
+  "options": {},
+  "attributes": {
+    "attribute": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "unique": false
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "Product"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "product_image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "product_id": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "attribute": {
+      "type": "dynamiczone",
+      "components": [
+        "technical-data.characteristic"
+      ]
+    },
+    "subcategories": {
+      "via": "products",
+      "collection": "subcategory"
+    }
+  }
+}
